@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Unknown Articulated Object Digital Twins</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Neural Implicit Representation for Building Digital Twins of Unknown Articulated Objects" />
+    <meta name="twitter:description" content="Project page for Neural Implicit Representation for Building Digital Twins of Unknown Articulated Objects." />
+    <meta name="twitter:image" content="https://digitaltwinart.github.io/digital_twin_art2023/img/teaser.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+			Neural Implicit Representation for Building Digital Twins of <br>
+			Unknown Articulated Objects
+              </br>
+              </br>
+                <small>
+                  Yijia Weng, Bowen Wen, Jonathan Tremblay, Valts Blukis
+                  </br>
+                  Dieter Fox, Leonidas Guibas, Stan Birchfield
+                </small>
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <image src="img/teaser.png" class="img-responsive" alt="overview" style="width: 50vw; max-width: 500px; min-width: 200px; margin: auto"><br>
+                <p class="text-justify">
+				We tackle the problem of building digital twins of unknown articulated objects from two RGBD scans of the object at different articulation states. We decompose the problem into two stages, each addressing distinct aspects. Our method first reconstructs object-level shape at each state, then recovers the underlying articulation model including part segmentation and joint articulations that associate the two states. By explicitly modeling point-level correspondences and exploiting cues from images, 3D reconstructions, and kinematics, our method yields more accurate and stable results compared to prior work. It also handles more than one movable part and does not rely on any object shape or structure priors.
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Demo: Interacting with the Multi-Part Digital Twin in Simulation
+                </h3>
+				<br>
+				<video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="img/sim_interaction_4x.m4v" type="video/mp4" />
+                </video>
+				<br><br>
+                <p class="text-justify">
+				Our reconstructed digital twin can be readily imported into simulation environments and interacted with. The above video shows an example interaction sequence in Issac Gym, played at 4x speed.
+                </p>
+				</div>
+        </div>
+
+		<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Results on PARIS Two-Part Object Dataset
+                </h3>
+				<br>
+				<video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="img/qual_two_part.mp4" type="video/mp4" />
+                </video>
+				<br><br>
+                <p class="text-justify">
+				Visualization of reconstruction results on PARIS Two-Part Object Dataset from PARIS, PARIS* (PARIS augmented with depth supervision), and our method. We run each method 10 times with different random initializations and show typical trials with performance closest to the average.
+                </p>
+				</div>
+        </div>
+
+		<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Results on SAPIEN Multi-Part Objects
+                </h3>
+				<br>
+				<video id="v0" width="100%" autoplay loop muted controls>
+                  <source src="img/qual_multi_part.mp4" type="video/mp4" />
+                </video>
+				<br><br>
+                <p class="text-justify">
+				Visualization of reconstruction results on SAPIEN Multi-Part Objects from PARIS*-m (PARIS augmented with depth supervision and extended to handle multiple movable parts) and our method. We run each method 10 times with different random initializations and show typical trials with performance closest to the average.
+                </p>
+				</div>
+        </div>
+
+
+
+		<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method Overview
+                </h3>
+                                <p style="text-align:center;">
+                    <image src="img/pipeline.png" class="img-responsive">
+                </p>
+				<p class="text-justify">
+				Given multi-view RGB-D observations of an articulated object at two different joint configurations, we aim to reconstruct its per-part geometry and articulation model.  <br>
+				We decompose this problem into two stages with distinct focuses. Our method performs per-state object-level reconstruction in the first stage, then recovers the articulation model in the second stage. We parameterize the articulation model with a part segmentation field and per-part rigid transformations, from which we explicitly derive a point correspondence field that associates the two reconstructions. The point correspondence field can be effectively supervised with a set of losses, including consistency loss, matching loss, and collision loss, leveraging cues from 3D reconstruction, image feature matching, and kinematics.
+				</p>
+				</div>
+        </div>
+
+
+
+
+		<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    <br>
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
