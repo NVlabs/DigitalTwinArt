@@ -31,7 +31,7 @@ We recommend using [Anaconda](https://www.anaconda.com/) to manage dependencies.
 ### Download Data
 
 
-Please download [our preprocessed, depth-augmented version]() of [PARIS two-part object dataset](https://github.com/3dlg-hcvc/paris?tab=readme-ov-file#data) and [our synthetic multi-part object dataset]() and unzip them into `./data` under project root. 
+Please download [our preprocessed, depth-augmented version](https://drive.google.com/file/d/1e_HWjw4usNHAkXkg6_o3QvfLD-YPR-1W/view?usp=drive_link) of [PARIS two-part object dataset](https://github.com/3dlg-hcvc/paris?tab=readme-ov-file#data) and [our synthetic multi-part object dataset](https://drive.google.com/file/d/186EskU7WtLU8CMgwY2swRUn5AB_fQ-qK/view?usp=drive_link) and unzip them into `./data` under project root. 
 
 ```bash
 artnerf
@@ -82,7 +82,7 @@ Checkpoints and reconstructions will be written to `runs/exp_${instance}`. Final
 
 ### Inference
 
-You could also download [our pretrained checkpoints]() and unzip them into `./runs` under project root. 
+You could also download [our pretrained checkpoints](https://drive.google.com/file/d/15Nn2fo13URJ9IUzQXRQ4sWsum7ZSzhmA/view?usp=drive_link) and unzip them into `./runs` under project root. 
 
 Run the following to generate a reconstruction from the checkpoint.
 
