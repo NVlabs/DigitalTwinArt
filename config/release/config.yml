@@ -1,0 +1,131 @@
+n_step: 4000
+netdepth: 8
+netwidth: 256
+netdepth_fine: 8
+netwidth_fine: 256
+N_rand: 2048         # Batch number of rays
+first_frame_ray_in_batch: 0
+lrate: 0.01
+lrate_pose: 0.01
+pose_optimize_start: 0
+decay_rate: 0.1
+chunk: 5000099999
+netchunk: 655360
+render_chunk: 2048
+no_batching: 0
+amp: true
+
+train_modes: ['ray', 'occ']
+
+use_gt_joint_type: false
+
+share_motion: true
+
+use_full_sdf: true
+sdf_voxel_size: 0.01
+occ_voxel_dilate: 0.03
+occ_sample_space: 200000
+
+sdf_to_occ_thresh: 0.01
+
+vis_discount: 0.5
+
+correspondence_name: correspondence_loftr/no_filter
+
+train_corr_n_step: 1
+freeze_recon_step: 2000
+
+N_samples: 128     #number of coarse samples per ray
+N_samples_around_depth: 64
+N_importance: 0
+N_importance_iter: 1
+perturb: 1
+
+use_viewdirs: 1
+multires: 8     #log2 of max freq for positional encoding (3D location)
+multires_views: 3    #log2 of max freq for positional encoding (2D direction)
+feature_grid_dim: 2
+feature_vol_dim: 20
+feature_vol_res: 50
+
+# logging/saving options
+i_print: 100
+i_wandb: 100
+i_img: 5000
+i_weights: 500
+i_mesh: 500
+save_octree_clouds: true
+
+finest_res: 256
+base_res: 16
+num_levels: 12
+log2_hashmap_size: 22
+use_octree: 1
+first_frame_weight: 10
+default_frame_weight: 1.0
+denoise_depth_use_octree_cloud: false
+octree_embed_base_voxel_size: 0.02
+octree_smallest_voxel_size: 0.02        # This determines the smallest feature vox size
+octree_raytracing_voxel_size: 0.02
+octree_dilate_size: 0.04           # meters
+down_scale_ratio: 1
+bounding_box:
+- - -1
+  - -1
+  - -1
+- - 1
+  - 1
+  - 1
+farthest_pose_sampling: 0    # Sampling train images. This replace uniform skip
+use_mask: 1
+dilate_mask_size: 0
+rays_valid_depth_only: true
+near: 0.1
+far: 10
+
+loss_weights:
+  self_rgb: 10
+  self_freespace: 100
+  self_empty: 1
+  self_sdf: 6000
+  corr: 500.0
+  ray_cns_rgb: 0.1
+  ray_cns_sdf: 10
+  ray_collision_occ: 50
+  occ_cns_occ: 5
+  occ_collision_occ: 50
+
+loss_schedule:
+  corr: 2000
+  occ_cns_occ: 2500
+  occ_collision_occ: 2500
+  ray_collision_occ: 2500
+
+trunc: 0.03   #length of the truncation region in meters
+sdf_weight_trunc: 0.03
+sdf_weight_cutoff: 0.05
+sdf_weight_neg_clamp: 0.5
+sdf_lambda: 5
+neg_trunc_ratio: 1      # -trunc distance ratio compared to +trunc
+sdf_loss_type: l2
+
+fs_sdf: 0.001   # Uncertain free space
+mesh_resolution: 0.01
+max_trans: 0.02         # meters
+max_rot: 20         # deg
+
+
+######### dbscan
+dbscan_eps: 0.06
+dbscan_eps_min_samples: 1
+
+###### movingparts
+
+slot_num: 2
+slot_hard: soft_gumbel
+empty_slot_weight: 0.0001
+
+use_gt_transform: false
+
+no_wandb: false
+

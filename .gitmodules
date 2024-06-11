@@ -1,0 +1,3 @@
+[submodule "external/LoFTR"]
+	path = external/LoFTR
+	url = git@github.com:zju3dv/LoFTR.git
