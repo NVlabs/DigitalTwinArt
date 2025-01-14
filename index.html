@@ -43,7 +43,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="font-size:36px;">Neural Implicit Representation for Building Digital Twins of <br>
+          <h1 class="title is-1 publication-title" style="font-size:36px; margin-bottom:12px">Neural Implicit Representation for Building Digital Twins of <br>
 			Unknown Articulated Objects</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -62,35 +62,40 @@
             <span class="author-block">NVIDIA</span>
           </div> -->
 
-          <img src="img/nvlogo.png" style="max-height: 100px">
-
-          <div style="font-size:28px; font-weight: bold;">
-            CVPR 2024
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2404.01440" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fa fa-file-pdf-o"></i>
-                </span>
-                <span>Paper</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/NVlabs/DigitalTwinArt" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fa fa-github"></i>
-                </span>
-                  <span>Code</span>
-                  </a>
-              </span>
+          <div class="columns is-mobile is-centered is-vcentered" style="margin-top:0; margin-bottom:0">
+            <div class="column" style="padding:0">
+              <img src="img/nvlogo.png" alt="NVIDIA" style="max-height: 100px">
             </div>
-
+            <div class="column" style="padding:0">
+              <div style="font-size:28px; font-weight: bold;">
+                CVPR 2024
+              </div> 
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.01440" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-file-pdf-o"></i>
+                  </span>
+                  <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/NVlabs/DigitalTwinArt" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa fa-github"></i>
+                  </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+              </div>
+            </div>
+            <div class="column" style="padding:0">
+              <img src="img/stanford.png" alt="Stanford" style="max-height: 80px">
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -98,8 +103,24 @@
 </section>
 	
 
-<section class="section">
+<section class="section" style="padding-top:0px">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Demo: Interacting with the Multi-Part Digital Twin</h2> -->
+				<video id="v0" width="100%" autoplay loop muted controls>
+          <source src="img/sim_interaction_4x.m4v" type="video/mp4" />
+        </video>
+				<br>
+        <p class="text-justify">
+        Our reconstructed digital twin can be readily imported into simulation environments and interacted with. The above video shows an example interaction sequence in Issac Gym, played at 4x speed.
+        </p>
+      </div>
+    </div>
+
+
+    <br>
+    <br>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -112,22 +133,6 @@
         <image src="img/teaser.png" class="img-responsive" alt="overview" style="width: 50vw; max-width: 500px; min-width: 200px; margin: auto"><br>
       </div>
     </div>
-
-    <br>
-    <br>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Demo: Interacting with the Multi-Part Digital Twin</h2>
-				<video id="v0" width="100%" autoplay loop muted controls>
-          <source src="img/sim_interaction_4x.m4v" type="video/mp4" />
-        </video>
-				<br>
-        <p class="text-justify">
-        Our reconstructed digital twin can be readily imported into simulation environments and interacted with. The above video shows an example interaction sequence in Issac Gym, played at 4x speed.
-        </p>
-      </div>
-    </div>
-
 
     <br>
     <br>
@@ -194,16 +199,12 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
         <div class="content">
           <p>
             Website taken from
               <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
           </p>
         </div>
-      </div>
-    </div>
   </div>
 </footer>
 
